@@ -1,5 +1,3 @@
-# CAPA Binja
-
 # BinaryNinja CAPA
 
 This plugin attempts to bring [CAPA](https://github.com/mandiant/capa) to BinaryNinja.
