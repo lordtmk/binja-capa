@@ -1,13 +1,43 @@
-# Sample Plugin
-Author: **Vector 35 Inc**
+# CAPA Binja
 
-_This is a short description meant to fit on one line._
+# BinaryNinja CAPA
 
-## Description:
-This is a longer description meant for a sample plugin that demonstrates the metadata format for Binary Ninja plugins. Note that the [community-plugins repo](https://github.com/Vector35/community-plugins) contains a useful [utility](https://github.com/Vector35/community-plugins/blob/master/generate_plugininfo.py) to validate the plugin.json. Additionally, the [release helper](https://github.com/Vector35/release_helper) plugin is helpful for more easily pushing new releases, incrementing versions, and creating the appropriate GitHub tags.
+This plugin attempts to bring [CAPA](https://github.com/mandiant/capa) to BinaryNinja.
 
-Note that originally we recommended specifying the contents of this entire file inside of the [plugin.json](./plugin.json) but the latest repository generator will use the readme contents directly which means you should simply leave an empty longdescription field. 
+At the moment, it is capable of opening an json output from capa command line and import it in Binary Ninja.
 
-## License
+## Installation
 
-This plugin is released under an [MIT license](./license).
+Copy (or clone) the content of this git into your plugins folder :
+
+- macOS: `~/Library/Application Support/Binary Ninja/plugins/`
+- Linux: `~/.binaryninja/plugins/`
+- Windows: `%APPDATA%\Binary Ninja\plugins`
+
+In the future, this plugin will be added to Binary Ninja’s plugin manager.
+
+## Usage
+
+1. You need to analyze the binary you want using CAPA cli, using verbose (—verbose) and redirecting json output to a file :
+
+    ```bash
+    capa Malwares/Pikabot/pikabot.dll --verbose -j > output.json
+    ```
+
+2. Load the binary you analyzed in Binary Ninja
+3. Load the plugin by Plugins > CAPA > Load input file
+
+![image1.png](images/image1.png)
+
+
+
+1. Now every capability is tagged in the binary and you can follow it using addresses :
+
+![image2.png](images/image2.png)
+
+![image3.png](image/image3.png)
+
+## Future improvements
+
+- Be more precise where matches are located in the code, by reusing blocks like IDA script
+- Find a way to run CAPA inside binja, either by launching a subprocess in the plugin running capa or understanding the library to use it directly
