@@ -31,11 +31,11 @@ In the future, this plugin will be added to Binary Ninja’s plugin manager.
 
 
 
-1. Now every capability is tagged in the binary and you can follow it using addresses :
+4. Now every capability is tagged in the binary and you can follow it using addresses :
 
 ![image2.png](images/image2.png)
 
-![image3.png](image/image3.png)
+![image3.png](images/image3.png)
 
 ## Future improvements
 
